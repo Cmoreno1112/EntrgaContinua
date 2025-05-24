@@ -16,15 +16,15 @@ steps:
     version: '8.0.x'
  
 # Cambia 'MySolution.sln' por el nombre real de tu archivo .sln
-- script: dotnet restore WebAPIEntregaContinua.sln
+- script: dotnet restore WebAPIEntregaContinua/WebAPIEntregaContinua.sln
   displayName: 'Restore dependencies'
   workingDirectory: '$(Build.SourcesDirectory)'
  
-- script: dotnet build WebAPIEntregaContinua.sln --configuration $(buildConfiguration)
+- script: dotnet build WebAPIEntregaContinua/WebAPIEntregaContinua.sln --configuration $(buildConfiguration)
   displayName: 'Build project'
   workingDirectory: '$(Build.SourcesDirectory)'
  
-- script: dotnet test WebAPIEntregaContinua.sln --configuration $(buildConfiguration) --no-build --verbosity normal
+- script: dotnet test WebAPIEntregaContinua/WebAPIEntregaContinua.sln --configuration $(buildConfiguration) --no-build --verbosity normal
   displayName: 'Run unit tests'
   workingDirectory: '$(Build.SourcesDirectory)'
  
